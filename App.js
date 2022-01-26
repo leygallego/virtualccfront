@@ -1,20 +1,50 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
+import Landing from './components/auth/Landing';
+import Register from './components/auth/Register';
+import Login from './components/Login';
+
+
+// Import the functions you need from the SDKs you need
+// import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// const firebaseConfig = {
+//   apiKey: "AIzaSyA-4mFM_oNT-xk-1G1fCHVlLcCfBtpedww",
+//   authDomain: "virtualcc-b41d9.firebaseapp.com",
+//   projectId: "virtualcc-b41d9",
+//   storageBucket: "virtualcc-b41d9.appspot.com",
+//   messagingSenderId: "402994710782",
+//   appId: "1:402994710782:web:c838f2b58a1fcd2329bdaf",
+//   measurementId: "G-G3Y6W3EG3L"
+// };
+
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
+
+// if (firebase.apps.length === 0){
+//   firebase.app
+// }
+
+
+const Stack = createStackNavigator();
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Landing" >
+        <Stack.Screen name="Landing" component={Landing} options={{headerShown:true, title: 'Centro Comercial Virtual'}} />
+        <Stack.Screen name="Register" component={Register} options={{title: 'Regístrate'}} />
+        <Stack.Screen name="Login" component={Login} options={{title: 'Ingresa'}} />
+
+
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
