@@ -1,13 +1,15 @@
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-// import { createStackNavigator } from '@react-navigation/stack';
+import DrawerNavigation from './src/navigation/DrawerNavigation';
+import { Provider } from 'react-redux';
+import { Store } from './src/redux/store';
 
+
+// import { createStackNavigator } from '@react-navigation/stack';
 // import Landing from './components/auth/Landing';
 // import Register from './components/auth/Register';
 // import Login from './components/Login';
-import DrawerNavigation from './src/navigation/DrawerNavigation';
-
 
 
 
@@ -15,10 +17,13 @@ import DrawerNavigation from './src/navigation/DrawerNavigation';
 // const Stack = createStackNavigator();
 export default function App() {
   return (
-    <NavigationContainer>
-      <DrawerNavigation />
-      
-    </NavigationContainer>
+
+    <Provider store={Store} >
+        <NavigationContainer>
+          <DrawerNavigation />
+        </NavigationContainer>
+    </Provider>
+    
   );
 }
 
