@@ -6,12 +6,12 @@ export default function Landing({navigation}) {
 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
     <Button 
     title="Register"
-    onPress={()=> navigation.navigate("Register")}
+    onPress={()=> navigation.navigate("Registrar")}
     />
-    <Text onPress={()=> navigation.navigate("Login")} >Si ya estás registrado, ingresa abajo </Text>
+    <Text onPress={()=> navigation.navigate("Ingresar")} >Si ya estás registrado, ingresa abajo </Text>
     <Button 
     title="Ingresar"
-    onPress={()=> navigation.navigate("Login")}
+    onPress={()=> navigation.navigate("Ingresar")}
     />
 </View>
   )
