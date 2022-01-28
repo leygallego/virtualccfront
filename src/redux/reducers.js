@@ -5,7 +5,7 @@ const initialState = {
     some: '',
 }
 
-function userReducer(state = initialState, action) {
+export default function useReducer(state = initialState, action) {
     switch (action.type) {
         case GET_SOME:
             return{
